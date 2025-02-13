@@ -1,39 +1,80 @@
+@import url("https://fonts.googleapis.com/css2?family=Pacifico:wght@200;400;600&display=swap");
+
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css");
+
+
 body {
   text-align: center;
   margin-top: 30px;
-  font-family: "Courier";
-  background-color: #fff5e4;
-  color: #ff9494;
+  font-family: "Courier", monospace;
+  background-color: #ffecef; /* Light pink background */
+  color: #d6336c; /* Romantic dark pink text */
+  overflow: hidden; /* Hide overflowing heart animations */
+  position: relative;
 }
 
+/* Valentine Question */
+#valentineQuestion {
+  font-size: 50px;
+  margin-bottom: 5px;
+  text-shadow: 2px 2px 5px rgba(214, 51, 108, 0.3);
+}
+
+/* Subtext Styling */
+#subtext {
+  font-size: 14px;
+  color: #8b5e83; /* Soft romantic color */
+  margin-top: 5px;
+  font-style: italic;
+}
+
+/* Image */
 img {
   height: 400px;
   width: auto;
   padding: 10px;
 }
 
-#valentineQuestion {
-  font-size: 50px;
-  margin-bottom: 10px;
-}
+/* Buttons */
 .answerButton {
-  padding: 10px 20px;
-  font-size: 18px;
+  padding: 12px 24px;
+  font-size: 20px;
   cursor: pointer;
+  font-family: "Courier", monospace;
   margin: 10px;
-  font-family: "courier";
-  margin-bottom: 20px;
-  background-color: #ffe3e1;
-  color: #e67373;
-  border-radius: 12px;
-  border: 2px solid #ffe3e1;
-  box-shadow: 1px 1px 2px #ff9494;
+  background-color: #ff90b3; /* Softer pink */
+  color: white;
+  border-radius: 20px;
+  border: 2px solid #ff6b9d; /* Darker pink */
+  box-shadow: 3px 3px 5px rgba(255, 105, 180, 0.3);
   transition: 0.3s;
+  font-weight: bold;
 }
 
+/* Button Hover Effects */
 .answerButton:hover {
-  background-color: #ff9494;
-  color: #ffe3e1;
-  border: 2px solid #ff9494;
-  box-shadow: 1px 1px 2px #ffe3e1;
+  background-color: #ff6b9d;
+  color: #fff;
+  border: 2px solid #ff447a;
+  transform: scale(1.1);
+  box-shadow: 3px 3px 10px rgba(255, 105, 180, 0.5);
+}
+
+/* Floating Hearts Animation */
+@keyframes fall {
+  from {
+     transform: translateY(0vh) translateX(-10vw); 
+  }
+  to {
+     transform: translateY(105vh) translateX(10vw); 
+  }
+} 
+
+/* Create multiple heart elements */
+.heart {
+  position: fixed;
+  font-size: 1.5rem;
+  top: -1vh;
+  transform: translateY(0);
+  animation: fall 3s linear forwards;
 }

@@ -1,40 +1,117 @@
+/* Import Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Pacifico:wght@200;400;600&display=swap");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css");
+
+/* General Page Styling */
 body {
   text-align: center;
   margin-top: 30px;
-  font-family: "Courier";
-  background-color: #fff5e4;
-  color: #ff9494;
+  font-family: "Courier", monospace;
+  background-color: #ffecef; /* Light pink background */
+  color: #d6336c; /* Romantic dark pink text */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* Prevents scrollbars from appearing due to animation */
+  position: relative;
 }
+
+/* Heading */
 #foodquestion {
-  font-size: 50px;
-  margin-bottom: 30px;
-}
-.food-item {
-  display: inline-block;
-  margin: 10px;
-  vertical-align: top;
-  color: #ff9494;
-}
-.food-item img {
-  height: 200px;
-  width: 200px;
-  border-radius: 50%;
-  border: 5px solid #ff9494;
-  object-fit: cover;
-  padding: 10px;
-}
-.food-item label {
-  display: block;
-}
-.button {
-  padding: 10px 20px;
-  font-size: 18px;
-  cursor: pointer;
-  margin: 10px;
-  font-family: "courier";
+  font-size: 40px;
+  text-shadow: 2px 2px 5px rgba(214, 51, 108, 0.3);
   margin-bottom: 20px;
-  background-color: #ffe3e1;
-  color: #e67373;
+}
+
+/* Grid Layout for Food Selection */
+.food-selection {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 columns */
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  padding: 20px;
+}
+
+/* Food Item Styling */
+.food-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
   border-radius: 12px;
-  border: 2px solid #ffe3e1;
+  padding: 12px;
+  background: #ffecef;
+  box-shadow: 3px 3px 10px rgba(255, 105, 180, 0.3);
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.food-item:hover {
+  transform: scale(1.08);
+}
+
+/* Food Images as Portraits */
+.food-item img {
+  width: 160px; /* Slightly larger images */
+  height: 230px; /* More portrait-like */
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 10px;
+  border: 5px solid #ff6b9d;
+  padding: 5px;
+}
+
+/* Label Styling */
+.food-item label {
+  font-size: 16px;
+  font-weight: bold;
+  color: #d6336c;
+}
+
+/* Continue Button */
+.button {
+  display: block;
+  margin: 30px auto;
+  padding: 12px 24px;
+  font-size: 18px;
+  font-family: "Courier", monospace;
+  background-color: #ff90b3;
+  color: white;
+  border-radius: 12px;
+  border: 2px solid #ff6b9d;
+  box-shadow: 3px 3px 5px rgba(255, 105, 180, 0.3);
+  transition: 0.3s;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #ff6b9d;
+  color: white;
+  transform: scale(1.1);
+}
+
+/* Falling Hearts Animation */
+@keyframes fall {
+  from {
+    transform: translateY(0vh) translateX(-10vw);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(100vh) translateX(10vw);
+    opacity: 0;
+  }
+}
+
+/* Hearts Styling */
+.heart {
+  position: fixed;
+  font-size: 1.5rem;
+  top: -1vh;
+  animation: fall linear forwards;
+  pointer-events: none; /* Prevents interference with buttons */
+  color: #ff6b9d;
 }

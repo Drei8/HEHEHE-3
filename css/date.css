@@ -1,16 +1,45 @@
+/* Import Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Pacifico:wght@200;400;600&display=swap");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css");
+
+/* General Page Styling */
 body {
   text-align: center;
   margin-top: 30px;
-  font-family: "Courier";
-  background-color: #fff5e4;
-  color: #ff9494;
+  font-family: "Courier", monospace;
+  background-color: #ffecef; /* Light pink background */
+  color: #d6336c; /* Romantic dark pink text */
   display: flex;
   flex-direction: column;
-}
-h1 {
-  font-size: 40px;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* Prevents scrollbars from appearing due to animation */
+  position: relative;
 }
 
+/* Heading */
+h1 {
+  font-size: 40px;
+  text-shadow: 2px 2px 5px rgba(214, 51, 108, 0.3);
+}
+
+/* Subtext Styling */
+#subtext {
+  font-size: 14px;
+  color: gray;
+  margin-top: 5px;
+  font-style: italic;
+}
+
+/* Form Styling */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 25px;
+}
+
+/* Form Header */
 form .header {
   width: 100%;
   display: flex;
@@ -19,20 +48,38 @@ form .header {
   color: #ff9494;
 }
 
-.form-group {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  font-size: 25px;
-}
-
+/* Buttons */
 .button {
-  padding: 6px 10px;
-  font-size: 15px;
+  padding: 8px 15px;
+  font-size: 16px;
   cursor: pointer;
   margin: 10px;
-  font-family: "courier";
-  margin-bottom: 10px;
+  font-family: "Courier", monospace;
+  background-color: #ff90b3; /* Softer pink */
+  color: white;
+  border-radius: 12px;
+  border: 2px solid #ff6b9d;
+  box-shadow: 3px 3px 5px rgba(255, 105, 180, 0.3);
+  transition: 0.3s;
+  font-weight: bold;
+}
+
+/* Button Hover Effects */
+.button:hover {
+  background-color: #ff6b9d;
+  color: #fff;
+  border: 2px solid #ff447a;
+  transform: scale(1.1);
+  box-shadow: 3px 3px 10px rgba(255, 105, 180, 0.5);
+}
+
+/* Date Input Field */
+input[type="date"] {
+  padding: 6px 12px;
+  font-size: 16px;
+  cursor: pointer;
+  margin: 10px;
+  font-family: "Courier", monospace;
   background-color: #ffe3e1;
   color: #e67373;
   border-radius: 12px;
@@ -40,21 +87,29 @@ form .header {
   transition: 0.3s;
 }
 
-.button:hover {
-  background-color: #ff9494;
-  color: #ffe3e1;
+/* Date Input Hover Effect */
+input[type="date"]:hover {
+  background-color: #ffdad9;
   border: 2px solid #ff9494;
 }
 
-input[type="date"] {
-  padding: 6px 10px;
-  font-size: 15px;
-  cursor: pointer;
-  margin: 10px;
-  font-family: "courier";
-  margin-bottom: 10px;
-  background-color: #ffe3e1;
-  color: #e67373;
-  border-radius: 12px;
-  border: 2px solid #ffe3e1;
+/* Floating Hearts Animation */
+@keyframes fall {
+  from {
+    transform: translateY(0vh) translateX(-10vw);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(100vh) translateX(10vw);
+    opacity: 0;
+  }
+}
+
+/* Hearts Styling */
+.heart {
+  position: fixed;
+  font-size: 1.5rem;
+  top: -1vh;
+  animation: fall linear forwards;
+  pointer-events: none; /* Prevents interference with buttons */
 }

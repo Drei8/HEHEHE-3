@@ -3,62 +3,77 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Food Selection</title>
+    <title>Memorya</title>
     <link rel="stylesheet" href="css/food.css" />
   </head>
   <body>
     <div id="foodquestion">
-      <b>What food would you like to eat?</b>
+      <b>Balik Tanaw</b>
     </div>
 
     <div class="food-selection">
       <div class="food-item">
-        <img src="food/burgers.jpeg" alt="Burgers, fries and fried chicken" />
-        <label
-          ><input
-            type="checkbox"
-            name="food"
-            value="Burgers, fries and fried chicken"
-          />
-          burgers and fried chicken</label
-        >
+        <img src="food\pic3.jpg" alt="Burgers, fries and fried chicken" />
+        <label>Nagcatch-up kayo ni kuji at sumunod ako (our first photobooth together)</label>
       </div>
       <div class="food-item">
-        <img src="food/dog.jpeg" alt="dog" />
-        <label
-          ><input type="checkbox" name="food" value="hotdog" /> hotdog</label
-        >
+        <img src="food\pic4.jpg" alt="hotdog" />
+        <label>Sabay tayong nagpagupit nito BWAHAHAHA nux bagong gupit yarn</label>
       </div>
       <div class="food-item">
-        <img src="food/koreanfood.jpeg" alt="koreanfood" />
-        <label
-          ><input type="checkbox" name="food" value="Korean food" /> korean
-          food</label
-        >
+        <img src="food\pic6.jpg" alt="korean food" />
+        <label>Tanay Daranak Falls Trip</label>
       </div>
       <div class="food-item">
-        <img src="food/pasta.jpeg" alt="pasta" />
-        <label><input type="checkbox" name="food" value="pasta" /> pasta</label>
+        <img src="food\pic2.jpg" alt="pasta" />
+        <label>Your birthday, photobooth muna saglit sa pambansang arcade</label>
       </div>
       <div class="food-item">
-        <img src="food/pizza.jpeg" alt="pizza" />
-        <label><input type="checkbox" name="food" value="pizza" /> pizza</label>
+        <img src="food\pic8.jpg" alt="pizza" />
+        <label>21/10/2023 (wala sweet lang)</label>
       </div>
       <div class="food-item">
-        <img src="food/salad.jpeg" alt="salad" />
-        <label><input type="checkbox" name="food" value="salad" /> salad</label>
+        <img src="food\pic9.jpg" alt="salad" />
+        <label>Rob Antips, nagpiktyur-piktyur at sinamahan mo ko magpabrace (one of our first photo tg).</label>
       </div>
       <div class="food-item">
-        <img src="food/steak.jpeg" alt="steak" />
-        <label><input type="checkbox" name="food" value="steak" /> steak</label>
+        <img src="food\pic5.jpg" alt="steak" />
+        <label>23/10/2023 (anotha sweet momints yieee)</label>
       </div>
       <div class="food-item">
-        <img src="food/sushi.jpeg" alt="sushi" />
-        <label><input type="checkbox" name="food" value="sushi" /> sushi</label>
+        <img src="food\pic1.jpg" alt="sushi" />
+        <label>LUH NYAREEE</label>
       </div>
     </div>
-    <button class="button" onclick="location.href='dessert.html'">
-      Continue UWU
+
+    <button class="button" onclick="location.href='lastpage.html'">
+      Ipagpatuloy
     </button>
+
+    <!-- JavaScript for Falling Hearts Animation -->
+    <script>
+      function createHeart() {
+        const heart = document.createElement("div");
+        heart.classList.add("heart");
+        heart.innerHTML = "💗"; // You can also use 💖, 💕, 💗, 💞 randomly
+
+        // Random position across screen width
+        heart.style.left = Math.random() * 100 + "vw";
+
+        // Random animation duration (between 3s - 6s)
+        heart.style.animationDuration = Math.random() * 3 + 3 + "s";
+
+        // Append to body
+        document.body.appendChild(heart);
+
+        // Remove heart after animation ends
+        setTimeout(() => {
+          heart.remove();
+        }, 6000);
+      }
+
+      // Generate hearts every 500ms (0.5 seconds)
+      setInterval(createHeart, 500);
+    </script>
   </body>
 </html>
